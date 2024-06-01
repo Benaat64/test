@@ -8,7 +8,7 @@ function App() {
   const [gameList, setGameList] = useState([]);
 
   function getPlayerGames(event){
-    axios.get("http://localhost:3000/historique", {params: {playerName: searchText , playerId: id}})
+    axios.get("/api/historique", {params: {playerName: searchText , playerId: id}})
     .then(function(response){
       setGameList(response.data)
     }).catch(function(error){
